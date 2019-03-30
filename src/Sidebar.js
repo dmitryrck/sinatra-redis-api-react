@@ -11,11 +11,17 @@ class Sidebar extends Component {
                 Dashboard <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Orders
-              </a>
-            </li>
+            {
+              this.props.lists.map( (item) => {
+                return (
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                      {item}
+                    </a>
+                  </li>
+                )
+              })
+            }
           </ul>
         </div>
       </nav>
