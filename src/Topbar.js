@@ -43,7 +43,7 @@ class Topbar extends Component {
               className="btn btn-primary"
               onClick={() => { this.createList() }}
             >
-              Create new
+              Create new list
             </button>
           </li>
         </ul>
