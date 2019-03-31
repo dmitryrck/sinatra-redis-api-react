@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { Route } from "react-router-dom"
 
 import "./App.css"
-import Navbar from "./Navbar"
+import Topbar from "./Topbar"
 import Sidebar from "./Sidebar"
 import List from "./List"
 
@@ -26,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar attachList={this.attachList} />
+        <Topbar attachList={this.attachList} />
 
         <div className="container-fuild">
           <div className="row">
