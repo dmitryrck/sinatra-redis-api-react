@@ -4,7 +4,7 @@ import axios from "axios"
 import Item from "./Item"
 import generateUUID from "./generateUUID"
 
-const baseUrl = "https://blooming-headland-75151.herokuapp.com"
+const baseUrl = process.env.REACT_APP_BASE_URL
 
 class List extends Component {
   constructor(props) {
