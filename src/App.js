@@ -9,13 +9,21 @@ import List from "./List"
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { lists: [], }
-
+    this.state = {
+      lists: (JSON.parse(localStorage.getItem("lists")) || []),
+    }
     this.attachList = this.attachList.bind(this)
   }
 
   attachList (name) {
     const originalList = this.state.lists
+    const localLists = JSON.parse(localStorage.getItem("lists")) || []
+
+    localStorage
+      .setItem(
+        "lists",
+        JSON.stringify([...localLists, name])
+      )
 
     this.setState({
       ...this.state,
