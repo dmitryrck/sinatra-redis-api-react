@@ -24,7 +24,6 @@ class List extends Component {
 
   tick (listUuid) {
     return item => {
-      console.log(item)
       axios({
         method: "PUT",
         url: `${baseUrl}/lists/${listUuid}/todos/${item.uuid}`,

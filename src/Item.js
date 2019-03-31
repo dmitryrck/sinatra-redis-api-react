@@ -1,6 +1,22 @@
 import React, { Component } from "react"
 
 class Item extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      done: this.props.attributes.done,
+    }
+    this.handleTick = this.handleTick.bind(this)
+  }
+
+  handleTick () {
+    this.props.tick(this.props.attributes)
+    this.setState({
+      ...this.state,
+      done: !this.state.done,
+    })
+  }
+
   render() {
     return(
       <li
@@ -9,8 +25,8 @@ class Item extends Component {
         <input
           className="form-check-input"
           type="checkbox"
-          value=""
-          onChange={() => this.props.tick(this.props.attributes)}
+          checked={this.state.done && "checked"}
+          onChange={this.handleTick}
           id={this.props.attributes.uuid}
         />
 
