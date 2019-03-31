@@ -12,7 +12,6 @@ class Navbar extends Component {
   }
 
   createList () {
-    // alert(`create list child: ${this.state.value}`)
     this.props.attachList(this.state.value)
     this.setState({ value: "" })
   }
