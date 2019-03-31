@@ -6,15 +6,11 @@ class Item extends Component {
     this.state = {
       done: this.props.attributes.done,
     }
-    this.handleTick = this.handleTick.bind(this)
   }
 
-  handleTick () {
+  handleTick = () => {
     this.props.tick(this.props.attributes)
-    this.setState({
-      ...this.state,
-      done: !this.state.done,
-    })
+    this.setState({ done: !this.state.done })
   }
 
   render() {

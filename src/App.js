@@ -12,10 +12,9 @@ class App extends Component {
     this.state = {
       lists: (JSON.parse(localStorage.getItem("lists")) || []),
     }
-    this.attachList = this.attachList.bind(this)
   }
 
-  attachList (name) {
+  attachList = name => {
     const originalList = this.state.lists
     const localLists = JSON.parse(localStorage.getItem("lists")) || []
 
@@ -26,7 +25,6 @@ class App extends Component {
       )
 
     this.setState({
-      ...this.state,
       lists: [...originalList, name],
     })
   }

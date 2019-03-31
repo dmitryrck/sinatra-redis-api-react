@@ -14,8 +14,6 @@ class List extends Component {
       value: "",
       items: [],
     }
-
-    this.updateValue = this.updateValue.bind(this)
   }
 
   getItems (listUuid) {
@@ -64,7 +62,7 @@ class List extends Component {
     })
   }
 
-  updateValue (event) {
+  updateValue = event => {
     this.setState({ value: event.target.value })
   }
 

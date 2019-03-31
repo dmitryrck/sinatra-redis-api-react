@@ -8,7 +8,6 @@ class Topbar extends Component {
     this.state = {
       value: "",
     }
-    this.updateValue = this.updateValue.bind(this)
   }
 
   createList () {
@@ -16,7 +15,7 @@ class Topbar extends Component {
     this.setState({ value: "" })
   }
 
-  updateValue (event) {
+  updateValue = event => {
     this.setState({ value: event.target.value })
   }
 
