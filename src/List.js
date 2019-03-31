@@ -14,9 +14,9 @@ class List extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillReceiveProps (nextProps) {
     axios
-      .get(`${baseUrl}/lists/${this.props.match.params.id}/todos`)
+      .get(`${baseUrl}/lists/${nextProps.match.params.id}/todos`)
       .then( response => {
         this.setState({ items: response.data });
       })
