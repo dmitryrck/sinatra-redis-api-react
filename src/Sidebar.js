@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 
 import { Link } from "react-router-dom"
 
@@ -10,7 +10,7 @@ function Sidebar(props) {
           {
             props.lists.map( item => {
               return (
-                <li key={item.uuid} className="nav-item">
+                <li key={item} className="nav-item">
                   <Link to={`/lists/${item}`} className="nav-link">
                     {item}
                   </Link>
