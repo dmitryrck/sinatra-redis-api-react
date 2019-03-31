@@ -18,7 +18,7 @@ class List extends Component {
     this.updateValue = this.updateValue.bind(this)
   }
 
-  getTodos (listUuid) {
+  getItems (listUuid) {
     axios
       .get(`${baseUrl}/lists/${listUuid}/todos`)
       .then( response => {
@@ -27,11 +27,11 @@ class List extends Component {
   }
 
   componentDidMount () {
-    this.getTodos(this.props.match.params.id)
+    this.getItems(this.props.match.params.id)
   }
 
   componentWillReceiveProps (nextProps) {
-    this.getTodos(nextProps.match.params.id)
+    this.getItems(nextProps.match.params.id)
   }
 
   tick (listUuid) {
@@ -71,11 +71,11 @@ class List extends Component {
   render() {
     return (
       <div>
-        <h1 className="h2">List <em>{this.props.match.params.id}</em></h1>
+        <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 className="h2">List <em>{this.props.match.params.id}</em></h1>
+        </div>
 
         <div className="form-group">
-          <label htmlFor="description">TODO</label>
-
           <input
             type="email"
             className="form-control"
@@ -92,6 +92,8 @@ class List extends Component {
         >
           Add new item
         </button>
+
+        <hr />
 
         <ul>
           {
